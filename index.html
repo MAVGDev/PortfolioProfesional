@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel Angel Vera Gomez - Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="templatemo-nexaverse.css">
+</head>
+<body>
+    <!-- ==================== LOADING SCREEN ==================== -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-ring"></div>
+        <div class="loading-text">Inicializando perfil profesional</div>
+    </div>
+
+    <!-- ==================== AMBIENT BACKGROUND (ORBES) ==================== -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- ==================== GRID OVERLAY ==================== -->
+    <div class="grid-overlay"></div>
+
+    <!-- ==================== MAIN CONTAINER ==================== -->
+    <div class="container">
+
+        <!-- ==================== HEADER (PANTALLA DE INICIO) ==================== -->
+        <div class="header" id="mainHeader">
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1768826283/FOTO_CV_q2miwy.jpg" alt="Miguel Angel Vera" class="logo-img">
+            </div>
+            <h1 class="brand-name">Miguel Angel Vera Gomez</h1>
+            <p class="tagline">Full Stack Developer</p>
+        </div>
+
+        <!-- ==================== MENÚ PRINCIPAL (6 BOTONES) ==================== -->
+        <div class="menu-grid" id="menuGrid">
+            <div class="menu-item initial-load" data-section="introduction">
+                <div class="menu-badge">SM</div>
+                <div class="menu-title">Sobre mí</div>
+            </div>
+            <div class="menu-item initial-load" data-section="servicios">
+                <div class="menu-badge">SV</div>
+                <div class="menu-title">Servicios</div>
+            </div>
+            <div class="menu-item initial-load" data-section="proyectos">
+                <div class="menu-badge">PR</div>
+                <div class="menu-title">Proyectos</div>
+            </div>
+            <div class="menu-item initial-load" data-section="formacion">
+                <div class="menu-badge">Form</div>
+                <div class="menu-title">Formación</div>
+            </div>
+            <div class="menu-item initial-load" data-section="experiencia">
+                <div class="menu-badge">EXP</div>
+                <div class="menu-title">Experiencia</div>
+            </div>
+            <div class="menu-item initial-load" data-section="contacto">
+                <div class="menu-badge">CT</div>
+                <div class="menu-title">Contacto</div>
+            </div>
+        </div>
+
+        <!-- ==================== CONTENEDOR DE SECCIONES ==================== -->
+        <div id="contentArea">
+
+            <!-- ================================================================ -->
+            <!-- SECCIÓN: SOBRE MÍ (INTRODUCTION)                                 -->
+            <!-- ================================================================ -->
+            <div class="content-section" id="introduction">
+                <div class="section-header-small">
+                    <div class="small-logo">
+                        <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1773081653/ChatGPT_Image_9_mar_2026_19_40_43_lbwn8a.png" alt="Miguel Angel" class="small-brand-img">
+                    </div>
+                    <div class="small-brand">
+                        <h3>Miguel Angel Vera Gomez</h3>
+                        <p>Full Stack Developer</p>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="backToMenu()">← Volver al Menú</button>
+
+                <!-- Hero Banner -->
+                <div class="intro-hero">
+                    <div class="intro-hero-content">
+                        <h1 class="intro-headline">Construyo experiencias<br><span>Digitales</span> a tu medida</h1>
+                        <p class="intro-subtext">
+                            Desarrollador Full Stack especializado en React, Node.js y MongoDB, enfocado en el desarrollo de aplicaciones web modernas, escalables y bien estructuradas.
+                            <br><br>
+                            Antes de dedicarme al desarrollo de software, acumulé 21 años de experiencia profesional en un sector completamente diferente, donde obtuve dos ascensos por desempeño y llegué a liderar equipos de hasta 8 personas. Era un entorno de alta responsabilidad y riesgo, donde el estrés formaba parte del día a día. Esta experiencia me permitió desarrollar una gran capacidad para mantener la calma bajo presión, tomar decisiones rápidas y resolver problemas de forma eficiente, habilidades que hoy aplico directamente en el desarrollo de software.
+                            <br><br>
+                            En el ámbito técnico trabajo principalmente con React, JavaScript, HTML, CSS y Tailwind en frontend, y Node.js, Express, MongoDB y SQL en backend, construyendo aplicaciones completas y funcionales. También cuento con experiencia en testing con Jest y Mocha, control de versiones mediante Git, y despliegue de aplicaciones en plataformas como Render y Netlify.
+                            <br><br>
+                            Además, tengo experiencia en impresión y escaneo 3D, utilizando herramientas como PrusaSlicer, UltiMaker Cura, ChiTuBox y Lychee, lo que refleja mi interés por la tecnología más allá del desarrollo web.
+                            <br><br>
+                            Fuera del ámbito tecnológico, soy monitor de defensa personal certificado por FEDAMC y el Ministerio del Interior, además de Campeón de España de Defensa Personal en 2021 y 2023, y medalla de bronce en 2022. Disciplina, resiliencia y pensamiento estratégico son habilidades que aplico tanto en el deporte como en el desarrollo de software para crear soluciones eficientes e innovadoras.
+                            <br><br>
+                            <strong>Teléfono:</strong> 639477821<br>
+                            <strong>Email:</strong> mangelveragomez@gmail.com
+                        </p>
+                        <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px;">
+                            <a href="https://www.linkedin.com/in/miguel-angel-vera-gomez-63a776101/" class="intro-cta-primary" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                            <a href="https://github.com/MAVGDev" class="intro-cta-secondary" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="javascript:void(0);" onclick="openModal()" class="intro-cta-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;"><i class="fas fa-comment"></i> Contacto</a>
+                        </div>
+                    </div>
+                    <div class="intro-hero-visual">
+                        <div class="intro-floating-card card-1"><span class="card-icon">⚡</span><span class="card-text">Lightning Fast</span></div>
+                        <div class="intro-floating-card card-2"><span class="card-icon">🎯</span><span class="card-text">Pixel Perfect</span></div>
+                        <div class="intro-floating-card card-3"><span class="card-icon">🔒</span><span class="card-text">Secure & Reliable</span></div>
+                        <div class="intro-orb"></div>
+                    </div>
+                </div>
+
+                <!-- Métricas -->
+                <div class="intro-metrics">
+                    <div class="metric-item"><span class="metric-value" data-target="5">5</span><span class="metric-label">Proyectos finalizados</span></div>
+                </div>
+
+                <!-- Valores -->
+                <div class="intro-values">
+                    <div class="value-card"><div class="value-number">01</div><h3>Innovación Primero</h3><p>Adoptando tecnologías emergentes y empujando los límites creativos para ofrecer soluciones que marcan nuevos estándares.</p></div>
+                    <div class="value-card"><div class="value-number">02</div><h3>Human-Centered</h3><p>Cada píxel, cada interacción está diseñada pensando en usuarios reales. Creo experiencias que la gente realmente ama.</p></div>
+                    <div class="value-card"><div class="value-number">03</div><h3>Results Driven</h3><p>Diseño bonito combinado con impacto medible. Sigo, itero y optimizo para obtener resultados que importan a tu negocio.</p></div>
+                </div>
+
+                <!-- ==================== MARQUEE DE TECNOLOGÍAS ==================== -->
+                <div class="intro-tech">
+                    <p class="tech-label">Tecnologías Disponibles</p>
+                    <div class="tech-marquee"><div class="tech-track">
+                        <!-- FRONTEND -->
+                        <span class="tech-item">HTML5</span>
+                        <span class="tech-item">CSS3</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">React.js</span>
+                        <span class="tech-item">Tailwind CSS</span>
+                        <span class="tech-item">React-Lucide</span>
+                        <!-- BACKEND -->
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">Express.js</span>
+                        <span class="tech-item">Java</span>
+                        <span class="tech-item">JWT</span>
+                        <span class="tech-item">Bcrypt</span>
+                        <!-- BASES DE DATOS -->
+                        <span class="tech-item">SQL</span>
+                        <span class="tech-item">MySQL</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">MongoDB</span>
+                        <span class="tech-item">MongoDB Compass</span>
+                        <!-- TESTING -->
+                        <span class="tech-item">Jest</span>
+                        <span class="tech-item">Mocha</span>
+                        <!-- HERRAMIENTAS -->
+                        <span class="tech-item">Git</span>
+                        <span class="tech-item">GitHub</span>
+                        <span class="tech-item">VS Code</span>
+                        <span class="tech-item">Trello</span>
+                        <span class="tech-item">Postman</span>
+                        <span class="tech-item">NotePad++</span>
+                        <!-- DESPLIEGUE -->
+                        <span class="tech-item">Netlify</span>
+                        <span class="tech-item">Render</span>
+                        <span class="tech-item">GitHub Pages</span>
+                        <!-- MEDIA -->
+                        <span class="tech-item">Cloudinary</span>
+                        <span class="tech-item">Multer</span>
+                        <!-- IMPRESIÓN 3D -->
+                        <span class="tech-item">PrusaSlicer</span>
+                        <span class="tech-item">UltiMaker Cura</span>
+                        <span class="tech-item">ChiTuBox</span>
+                        <span class="tech-item">Lychee</span>
+                        <span class="tech-item">Escaneo 3D</span>
+                        <!-- IA / BIG DATA -->
+                        <span class="tech-item">IA Generativa</span>
+                        <span class="tech-item">Prompt Engineering</span>
+                        <span class="tech-item">Big Data</span>
+                        <span class="tech-item">5G</span>
+                    </div></div>
+                </div>
+
+                <!-- ==================== SECCIÓN DE TECNOLOGÍAS POR CATEGORÍAS ==================== -->
+                <div style="margin-top: 60px;">
+                    <p class="tech-label" style="text-align: center; font-size: 18px; letter-spacing: 4px;">Tecnologías por Categoría</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+                        
+                        <!-- Frontend -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-paint-brush"></i> Frontend</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">React-Lucide</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Backend -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-server"></i> Backend</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">JWT</span>
+                                <span class="tech-tag">Bcrypt</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Bases de Datos -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-database"></i> Bases de Datos</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">MongoDB Compass</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Testing -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-vial"></i> Testing</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">Jest</span>
+                                <span class="tech-tag">Mocha</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Herramientas -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-tools"></i> Herramientas</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">GitHub</span>
+                                <span class="tech-tag">VS Code</span>
+                                <span class="tech-tag">Trello</span>
+                                <span class="tech-tag">Postman</span>
+                                <span class="tech-tag">NotePad++</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Despliegue -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-cloud-upload-alt"></i> Despliegue</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">Netlify</span>
+                                <span class="tech-tag">Render</span>
+                                <span class="tech-tag">GitHub Pages</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Multimedia -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-image"></i> Multimedia</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">Cloudinary</span>
+                                <span class="tech-tag">Multer</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Impresión 3D -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-cube"></i> Impresión 3D</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">PrusaSlicer</span>
+                                <span class="tech-tag">UltiMaker Cura</span>
+                                <span class="tech-tag">ChiTuBox</span>
+                                <span class="tech-tag">Lychee</span>
+                                <span class="tech-tag">Escaneo 3D</span>
+                            </div>
+                        </div>
+                        
+                        <!-- IA / Big Data / 5G -->
+                        <div class="value-card" style="padding: 25px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-brain"></i> IA & Big Data</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tech-tag">IA Generativa</span>
+                                <span class="tech-tag">Prompt Engineering</span>
+                                <span class="tech-tag">Big Data</span>
+                                <span class="tech-tag">5G</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================================================================ -->
+            <!-- SECCIÓN: SERVICIOS                                               -->
+            <!-- ================================================================ -->
+            <div class="content-section" id="servicios">
+                <div class="section-header-small">
+                    <div class="small-logo"><img src="https://res.cloudinary.com/dchedntcz/image/upload/v1773081653/ChatGPT_Image_9_mar_2026_19_40_43_lbwn8a.png" alt="Miguel Angel" class="small-brand-img"></div>
+                    <div class="small-brand"><h3>MAVG</h3><p>Digital Experiences</p></div>
+                </div>
+                <button class="back-btn" onclick="backToMenu()">← Volver al Menú</button>
+
+                <div class="section-header"><h2 class="section-title">Mis Servicios</h2><p class="section-subtitle">Soluciones integrales para la era digital</p></div>
+
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="switchTab(this, 'development')">Development</button>
+                        <button class="tab-btn" onclick="switchTab(this, 'design')">Design</button>
+                        <button class="tab-btn" onclick="switchTab(this, 'consulting')">Consulting</button>
+                        <button class="tab-btn" onclick="switchTab(this, 'support')">Support</button>
+                    </div>
+                    <div class="tab-content">
+                        <!-- PESTAÑA DEVELOPMENT (con el nuevo servicio para pequeño comercio) -->
+                        <div class="tab-pane active" id="development">
+                            <div class="services-list">
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-store" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>Webs para Pequeño Comercio</h4><p>Páginas web profesionales y adaptadas a las necesidades de pequeños comercios, restaurantes y autónomos. Diseño responsive, catálogo de productos, carta online, reservas, localización y contacto. Soluciones asequibles que ayudan a tu negocio a tener presencia digital sin complicaciones.</p></div></div>
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-code" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>Aplicaciones Web a Medida</h4><p>Aplicaciones web escalables y personalizadas creadas con React, Node.js y bases de datos modernas para un rendimiento óptimo.</p></div></div>
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-mobile-alt" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>APIs & Backend</h4><p>Desarrollo de APIs RESTful robustas, autenticación JWT, integración con bases de datos SQL y NoSQL.</p></div></div>
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-paint-brush" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>Frontend Moderno</h4><p>Interfaces responsivas y dinámicas con React, Tailwind CSS y JavaScript moderno.</p></div></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="design">
+                            <div class="services-list">
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-drafting-compass" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>UX/UI Design</h4><p>Interfaces intuitivas y hermosas que deleitan a los usuarios y aumentan la conversión.</p></div></div>
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-mobile" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>Responsive Design</h4><p>Diseños adaptados a todos los dispositivos, desde móviles hasta pantallas de escritorio.</p></div></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="consulting">
+                            <div class="services-list">
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-chart-line" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>Estrategia Digital</h4><p>Planificación estratégica para transformación digital alineando tecnología con objetivos de negocio.</p></div></div>
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-robot" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>IA & Automatización</h4><p>Soluciones de inteligencia artificial y automatización de procesos para optimizar tu negocio.</p></div></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="support">
+                            <div class="services-list">
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-headset" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>Soporte Técnico</h4><p>Asistencia y mantenimiento continuo para mantener tus sistemas funcionando sin problemas.</p></div></div>
+                                <div class="service-row"><div class="service-row-icon"><i class="fas fa-cloud-upload-alt" style="font-size: 48px; color: var(--primary);"></i></div><div class="service-row-content"><h4>Despliegue & DevOps</h4><p>Despliegue en la nube (Netlify, Render, GitHub Pages) y configuración de CI/CD.</p></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================================================================ -->
+            <!-- SECCIÓN: PROYECTOS                                               -->
+            <!-- ================================================================ -->
+            <div class="content-section" id="proyectos">
+                <div class="section-header-small">
+                    <div class="small-logo"><img src="https://res.cloudinary.com/dchedntcz/image/upload/v1773081653/ChatGPT_Image_9_mar_2026_19_40_43_lbwn8a.png" alt="Miguel Angel" class="small-brand-img"></div>
+                    <div class="small-brand"><h3>MAVG</h3><p>Digital Experiences</p></div>
+                </div>
+                <button class="back-btn" onclick="backToMenu()">← Volver al Menú</button>
+
+                <div class="section-header"><h2 class="section-title">Mis Proyectos</h2><p class="section-subtitle">Explora mis últimos trabajos</p></div>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterGallery('all', this)">Todos</button>
+                    <button class="filter-btn" onclick="filterGallery('web', this)">Web</button>
+                    <button class="filter-btn" onclick="filterGallery('fullstack', this)">FullStack</button>
+                    <button class="filter-btn" onclick="filterGallery('3d', this)">Impresión 3D</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Proyecto 1: Comparador Artes Marciales -->
+                    <div class="gallery-item" data-category="fullstack">
+                        <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1755087579/comparador_ypye84.png" alt="Comparador Artes Marciales">
+                        <div class="gallery-overlay">
+                            <h4>Comparador Artes Marciales</h4>
+                            <p>React, Node.js, MongoDB</p>
+                            <div style="display: flex; gap: 12px; margin-top: 10px; justify-content: center;">
+                                <a href="https://github.com/MAVGDev/artes-marciales-frontend.git" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fab fa-github"></i> Código</a>
+                                <a href="https://artesmarcialescomparator.netlify.app/" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 2: Tienda Ropa -->
+                    <div class="gallery-item" data-category="fullstack">
+                        <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1755087122/tienda_ropa_tjw10h.png" alt="Tienda Ropa">
+                        <div class="gallery-overlay">
+                            <h4>Tienda Ropa</h4>
+                            <p>Node.js, Express, Cloudinary</p>
+                            <div style="display: flex; gap: 12px; margin-top: 10px; justify-content: center;">
+                                <a href="https://github.com/MAVGDev/Tienda-Ropa.git" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fab fa-github"></i> Código</a>
+                                <a href="https://tienda-ropa-2.onrender.com" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 3: Dashboard -->
+                    <div class="gallery-item" data-category="web">
+                        <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1756908685/dashboard_lfr2so.jpg" alt="Dashboard">
+                        <div class="gallery-overlay">
+                            <h4>Dashboard</h4>
+                            <p>JavaScript, CSS, HTML</p>
+                            <div style="display: flex; gap: 12px; margin-top: 10px; justify-content: center;">
+                                <a href="https://github.com/MAVGDev/Dashboard.git" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fab fa-github"></i> Código</a>
+                                <a href="https://mavgdev.github.io/Dashboard/" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 4: Social Media Dashboard -->
+                    <div class="gallery-item" data-category="fullstack">
+                        <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1763382910/socialmedia_je0epz.jpg" alt="Social Media">
+                        <div class="gallery-overlay">
+                            <h4>Social Media Dev</h4>
+                            <p>React, Tailwind, Express</p>
+                            <div style="display: flex; gap: 12px; margin-top: 10px; justify-content: center;">
+                                <a href="https://github.com/MAVGDev/socialmedia-frontend" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fab fa-github"></i> Código Front</a>
+                                <a href="https://github.com/MAVGDev/socialmedia-backend" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fab fa-github"></i> Código Back</a>
+                                <a href="https://socialmediadev.netlify.app/" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 5: DojoApp (Freelance - código privado) -->
+                    <div class="gallery-item" data-category="fullstack">
+                        <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1776335635/dojoapp_mnx24e.jpg" alt="DojoApp">
+                        <div class="gallery-overlay">
+                            <h4>DojoApp</h4>
+                            <p>React, Node.js, Cloudinary</p>
+                            <div style="display: flex; gap: 12px; margin-top: 10px; justify-content: center;">
+                                <span style="color: rgba(255,255,255,0.5); font-size: 11px;"><i class="fas fa-lock"></i> Código privado</span>
+                                <a href="https://namkunapp.netlify.app/" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 6: Impresión 3D -->
+                    <div class="gallery-item" data-category="3d">
+                        <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1756828173/primeforge_dpsbc0.jpg" alt="Impresión 3D">
+                        <div class="gallery-overlay">
+                            <h4>PrimeForge 3D</h4>
+                            <p>PrusaSlicer, Cura, Lychee</p>
+                            <div style="display: flex; gap: 12px; margin-top: 10px; justify-content: center;">
+                                <a href="https://www.instagram.com/primeforge3d/" target="_blank" style="color: var(--primary); font-size: 12px;"><i class="fab fa-instagram"></i> Galería</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================================================================ -->
+            <!-- SECCIÓN: FORMACIÓN                                               -->
+            <!-- ================================================================ -->
+            <div class="content-section" id="formacion">
+                <div class="section-header-small">
+                    <div class="small-logo"><img src="https://res.cloudinary.com/dchedntcz/image/upload/v1773081653/ChatGPT_Image_9_mar_2026_19_40_43_lbwn8a.png" alt="Miguel Angel" class="small-brand-img"></div>
+                    <div class="small-brand"><h3>MAVG</h3><p>Digital Experiences</p></div>
+                </div>
+                <button class="back-btn" onclick="backToMenu()">← Volver al Menú</button>
+
+                <div class="section-header"><h2 class="section-title">Formación</h2><p class="section-subtitle">Mi trayectoria académica y certificaciones</p></div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>🎓 Máster/Bootcamp Full Stack Development</strong><br>The Bridge - Febrero 2025 / Agosto 2025<br>Formación intensiva en desarrollo Fullstack con React, Node.js, MongoDB, metodologías ágiles.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>☕ Programación en Java</strong><br>Academia Postal 3 Vigo - 2025<br>POO, estructuras de control, colecciones, gestión de BBDD.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>🤖 IA y Data Science Aplicadas a Empresas</strong><br>INFOCA Formación - 2025/2026<br>Transformación digital, IA aplicada a finanzas y contabilidad.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>📡 5G y Big Data para la innovación empresarial</strong><br>INFOCA / Orange - 2026<br>5G, Big Data, IA, VR/AR aplicados a industria 4.0.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>🥋 Instructor de Defensa Personal</strong><br>FEDAMC / Ministerio del Interior - 2024<br>Certificado para impartir defensa personal en colegios y cuerpos de seguridad.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>🧠 Curso IA Generativa</strong><br>The Bridge - 2025<br>Modelos de lenguaje, prompt engineering, framework C.R.E.A.T.E.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>🌐 Certificado de Profesionalidad: Confección y Publicación de Páginas Web</strong><br>SEPE / Servicio Público de Empleo Estatal<br>Programa oficial que acredita competencias profesionales para el diseño, maquetación, desarrollo y publicación de sitios web, incluyendo lenguajes de marcado, hojas de estilo, programación frontend y accesibilidad.</div></div>
+                </div>
+            </div>
+
+            <!-- ================================================================ -->
+            <!-- SECCIÓN: EXPERIENCIA                                             -->
+            <!-- ================================================================ -->
+            <div class="content-section" id="experiencia">
+                <div class="section-header-small">
+                    <div class="small-logo"><img src="https://res.cloudinary.com/dchedntcz/image/upload/v1773081653/ChatGPT_Image_9_mar_2026_19_40_43_lbwn8a.png" alt="Miguel Angel" class="small-brand-img"></div>
+                    <div class="small-brand"><h3>MAVG</h3><p>Digital Experiences</p></div>
+                </div>
+                <button class="back-btn" onclick="backToMenu()">← Volver al Menú</button>
+
+                <div class="section-header"><h2 class="section-title">Experiencia</h2><p class="section-subtitle">Mi trayectoria profesional</p></div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>🚀 Full Stack Developer Freelance</strong><br>Escuela de Artes Marciales NamKun - Sept 2025 / Abr 2026<br>App web de gestión de academias: alumnado, pagos, eventos, programas personalizados. React, Node.js, Tailwind, Cloudinary, Netlify.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>💻 Full Stack Developer</strong><br>The Bridge - Feb 2025 / Ago 2025<br>Desarrollo de aplicaciones web con React, Node.js, Express, MongoDB. Despliegue en Render y Netlify.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>🛣️ Mantenimiento COEX</strong><br>M45 Conservación - Dic 2003 / Sep 2024<br>Gestión de equipos, almacén con SAGE, prevención de riesgos, respuesta ante emergencias.</div></div>
+                    <div class="testimonial-card"><div class="testimonial-text"><strong>🥋 Monitor de Hapkido y Defensa Personal</strong><br>FEDAMC - Julio 2024 / Actualidad<br>Impartición en colegios, institutos, Guardia Civil y Policía Municipal. Campeón de España 2021 y 2023.</div></div>
+                </div>
+            </div>
+
+            <!-- ================================================================ -->
+            <!-- SECCIÓN: CONTACTO                                                -->
+            <!-- ================================================================ -->
+            <div class="content-section" id="contacto">
+                <div class="section-header-small">
+                    <div class="small-logo"><img src="https://res.cloudinary.com/dchedntcz/image/upload/v1773081653/ChatGPT_Image_9_mar_2026_19_40_43_lbwn8a.png" alt="Miguel Angel" class="small-brand-img"></div>
+                    <div class="small-brand"><h3>MAVG</h3><p>Digital Experiences</p></div>
+                </div>
+                <button class="back-btn" onclick="backToMenu()">← Volver al Menú</button>
+
+                <div class="section-header"><h2 class="section-title">Contacto</h2><p class="section-subtitle">Hablemos y creemos algo increíble juntos</p></div>
+
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <div class="form-group"><input type="text" id="contact-name" placeholder="Tu Nombre"></div>
+                        <div class="form-group"><input type="email" id="contact-email" placeholder="Tu Email"></div>
+                        <div class="form-group"><input type="text" id="contact-subject" placeholder="Asunto"></div>
+                        <div class="form-group"><textarea id="contact-message" placeholder="Tu Mensaje"></textarea></div>
+                        <button class="submit-btn" id="send-contact-btn">Enviar Mensaje</button>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-details"><h4>Ubicación</h4><p>Rivas Vaciamadrid - Madrid</p></div></div>
+                        <div class="contact-item"><div class="contact-icon">📧</div><div class="contact-details"><h4>Email</h4><p>mangelveragomez@gmail.com</p></div></div>
+                        <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-details"><h4>Teléfono</h4><p>639477821</p></div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /contentArea -->
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="footer" id="mainFooter"></footer>
+
+    </div><!-- /container -->
+
+    <!-- ==================== MODAL DE CONTACTO ==================== -->
+    <div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index: 10001;">
+        <div style="background: var(--dark-1); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 24px; padding: 30px; max-width: 500px; width: 90%; position: relative;">
+            <span id="close-modal" style="position:absolute; top: 15px; right: 20px; cursor:pointer; font-size: 28px; color: white;">&times;</span>
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Contacta conmigo</h2>
+            <form id="contact-form-modal">
+                <div style="margin-bottom: 15px;"><input type="text" id="modal-name" name="from_name" placeholder="Tu Nombre" required style="width:100%; padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: white;"></div>
+                <div style="margin-bottom: 15px;"><input type="email" id="modal-email" name="from_email" placeholder="Tu Email" required style="width:100%; padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: white;"></div>
+                <div style="margin-bottom: 15px;"><textarea id="modal-message" name="message" placeholder="Tu Mensaje" required style="width:100%; padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: white; min-height: 120px;"></textarea></div>
+                <button type="submit" style="padding: 12px 24px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border: none; border-radius: 40px; color: white; font-weight: bold; cursor: pointer; width: 100%;">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="templatemo-nexa-scripts.js"></script>
+    <script>
+        // ==================== EMAILJS INIT ====================
+        (function(){ emailjs.init("MrSwHNwYVZQR96f_N"); })();
+
+        // ==================== MODAL FUNCTIONS ====================
+        const modal = document.getElementById('contact-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        function openModal() { modal.style.display = 'flex'; }
+        if(closeModalBtn) closeModalBtn.addEventListener('click', () => { modal.style.display = 'none'; });
+        window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
+
+        // ==================== ENVÍO FORMULARIO MODAL ====================
+        const modalForm = document.getElementById('contact-form-modal');
+        if(modalForm) {
+            modalForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                emailjs.sendForm('service_k1zqwnz', 'template_wyrxbsh', this)
+                    .then(() => { alert('¡Mensaje enviado correctamente!'); modalForm.reset(); modal.style.display = 'none'; })
+                    .catch((err) => { console.error(err); alert('Error al enviar. Inténtalo de nuevo.'); });
+            });
+        }
+
+        // ==================== ENVÍO FORMULARIO SECCIÓN CONTACTO ====================
+        const contactBtn = document.getElementById('send-contact-btn');
+        if(contactBtn) {
+            contactBtn.addEventListener('click', function() {
+                const name = document.getElementById('contact-name')?.value || '';
+                const email = document.getElementById('contact-email')?.value || '';
+                const subject = document.getElementById('contact-subject')?.value || '';
+                const message = document.getElementById('contact-message')?.value || '';
+                if(!name || !email || !message) { alert('Por favor, completa todos los campos'); return; }
+                const templateParams = { from_name: name, from_email: email, subject: subject, message: message };
+                emailjs.send('service_k1zqwnz', 'template_wyrxbsh', templateParams)
+                    .then(() => { alert('¡Mensaje enviado correctamente!'); document.getElementById('contact-name').value = ''; document.getElementById('contact-email').value = ''; document.getElementById('contact-subject').value = ''; document.getElementById('contact-message').value = ''; })
+                    .catch((err) => { console.error(err); alert('Error al enviar. Inténtalo de nuevo.'); });
+            });
+        }
+    </script>
+</body>
+</html>
