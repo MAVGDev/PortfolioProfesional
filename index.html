@@ -516,7 +516,7 @@
         }
 
         // ==================== ENVÍO FORMULARIO SECCIÓN CONTACTO ====================
-        const contactBtn = document.getElementById('send-contact-btn');
+       const contactBtn = document.getElementById('send-contact-btn');
         if(contactBtn) {
             contactBtn.addEventListener('click', function() {
                 const name = document.getElementById('contact-name')?.value || '';
@@ -538,7 +538,7 @@
                 
                 console.log('Enviando sección contacto:', templateParams);
                 
-                emailjs.send('service_ke2e3zd', 'template_wyrxbsh', templateParams)
+                emailjs.send('service_uq8y8ta', 'template_wyrxbsh', templateParams)
                     .then(function(response) {
                         console.log('Éxito!', response);
                         alert('¡Mensaje enviado correctamente!');
