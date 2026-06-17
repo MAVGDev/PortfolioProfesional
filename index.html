@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miguel Angel Vera Gomez - Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer especializado en React, Node.js y MongoDB. Desarrollo de aplicaciones web modernas, APIs REST y soluciones digitales a medida. Disponible para proyectos freelance en Madrid.">
+    <meta name="keywords" content="Full Stack Developer, React, Node.js, MongoDB, desarrollo web, freelance, Madrid, aplicaciones web, API REST">
+    <meta name="author" content="Miguel Angel Vera Gomez">
+    <meta property="og:title" content="Miguel Angel Vera Gomez - Full Stack Developer">
+    <meta property="og:description" content="Desarrollo de aplicaciones web modernas con React, Node.js y MongoDB. Disponible para proyectos freelance.">
+    <meta property="og:image" content="https://res.cloudinary.com/dchedntcz/image/upload/v1768826283/FOTO_CV_q2miwy.jpg">
+    <meta property="og:url" content="https://mavdeveloper.netlify.app">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miguel Angel Vera Gomez - Full Stack Developer">
+    <meta name="twitter:description" content="Desarrollo de aplicaciones web modernas con React, Node.js y MongoDB.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dchedntcz/image/upload/v1768826283/FOTO_CV_q2miwy.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -68,6 +80,7 @@
             <div class="menu-item initial-load" data-section="opiniones">
                 <div class="menu-badge">OP</div>
                 <div class="menu-title">Opiniones</div>
+                <div class="menu-notification" id="reviews-badge" style="display:none;">0</div>
             </div>
         </div>
 
@@ -107,13 +120,17 @@
                             <strong>Teléfono:</strong> 639477821<br>
                             <strong>Email:</strong> mangelveragomez@gmail.com
                         </p>
-                        <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px;">
+                        <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
                             <a href="https://www.linkedin.com/in/miguel-angel-vera-gomez-63a776101/" class="intro-cta-primary" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                             <a href="https://github.com/MAVGDev" class="intro-cta-secondary" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-github"></i> GitHub</a>
                             <a href="javascript:void(0);" onclick="openModal()" class="intro-cta-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;"><i class="fas fa-comment"></i> Contacto</a>
+                            <a href="cv-miguel-angel-vera.pdf" download class="intro-cta-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-download"></i> Descargar CV</a>
                         </div>
                     </div>
                     <div class="intro-hero-visual">
+                        <div class="profile-photo-hero">
+                            <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1768826283/FOTO_CV_q2miwy.jpg" alt="Miguel Angel Vera Gomez">
+                        </div>
                         <div class="intro-floating-card card-1"><span class="card-icon">⚡</span><span class="card-text">Lightning Fast</span></div>
                         <div class="intro-floating-card card-2"><span class="card-icon">🎯</span><span class="card-text">Pixel Perfect</span></div>
                         <div class="intro-floating-card card-3"><span class="card-icon">🔒</span><span class="card-text">Secure & Reliable</span></div>
@@ -123,7 +140,13 @@
 
                 <!-- Métricas -->
                 <div class="intro-metrics">
-                    <div class="metric-item"><span class="metric-value" data-target="5">5</span><span class="metric-label">Proyectos finalizados</span></div>
+                    <div class="metric-item"><span class="metric-value" data-target="5">0</span><span class="metric-label">Proyectos finalizados</span></div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item"><span class="metric-value" data-target="21">0</span><span class="metric-label">Años de experiencia</span></div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item"><span class="metric-value" data-target="10">0</span><span class="metric-label">Tecnologías dominadas</span></div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item"><span class="metric-value" data-target="3">0</span><span class="metric-label">Campeonatos de España</span></div>
                 </div>
 
                 <!-- Valores -->
@@ -167,79 +190,55 @@
                     </div></div>
                 </div>
 
-                <!-- ==================== SECCIÓN DE TECNOLOGÍAS POR CATEGORÍAS ==================== -->
                 <div style="margin-top: 60px;">
                     <p class="tech-label" style="text-align: center; font-size: 18px; letter-spacing: 4px;">Tecnologías por Categoría</p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
-                        <div class="value-card" style="padding: 25px;">
+                    <div class="tech-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+                        <div class="value-card tech-card-anim" style="padding: 25px; --delay: 0s">
                             <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-paint-brush"></i> Frontend</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="tech-tag">HTML5</span>
-                                <span class="tech-tag">CSS3</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">React.js</span>
-                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">React.js</span><span class="tech-tag">Tailwind CSS</span>
                             </div>
                         </div>
-                        <div class="value-card" style="padding: 25px;">
+                        <div class="value-card tech-card-anim" style="padding: 25px; --delay: 0.1s">
                             <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-server"></i> Backend</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">Express.js</span>
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">JWT</span>
-                                <span class="tech-tag">Bcrypt</span>
+                                <span class="tech-tag">Node.js</span><span class="tech-tag">Express.js</span><span class="tech-tag">Java</span><span class="tech-tag">JWT</span><span class="tech-tag">Bcrypt</span>
                             </div>
                         </div>
-                        <div class="value-card" style="padding: 25px;">
+                        <div class="value-card tech-card-anim" style="padding: 25px; --delay: 0.2s">
                             <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-database"></i> Bases de Datos</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="tech-tag">SQL</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">SQL</span><span class="tech-tag">MySQL</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">MongoDB</span>
                             </div>
                         </div>
-                        <div class="value-card" style="padding: 25px;">
+                        <div class="value-card tech-card-anim" style="padding: 25px; --delay: 0.3s">
                             <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-vial"></i> Testing</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="tech-tag">Jest</span>
-                                <span class="tech-tag">Mocha</span>
+                                <span class="tech-tag">Jest</span><span class="tech-tag">Mocha</span>
                             </div>
                         </div>
-                        <div class="value-card" style="padding: 25px;">
+                        <div class="value-card tech-card-anim" style="padding: 25px; --delay: 0.4s">
                             <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-tools"></i> Herramientas</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="tech-tag">Git</span>
-                                <span class="tech-tag">GitHub</span>
-                                <span class="tech-tag">VS Code</span>
-                                <span class="tech-tag">Postman</span>
+                                <span class="tech-tag">Git</span><span class="tech-tag">GitHub</span><span class="tech-tag">VS Code</span><span class="tech-tag">Postman</span>
                             </div>
                         </div>
-                        <div class="value-card" style="padding: 25px;">
+                        <div class="value-card tech-card-anim" style="padding: 25px; --delay: 0.5s">
                             <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-cloud-upload-alt"></i> Despliegue</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="tech-tag">Netlify</span>
-                                <span class="tech-tag">Render</span>
-                                <span class="tech-tag">GitHub Pages</span>
+                                <span class="tech-tag">Netlify</span><span class="tech-tag">Render</span><span class="tech-tag">GitHub Pages</span>
                             </div>
                         </div>
-                        <div class="value-card" style="padding: 25px;">
+                        <div class="value-card tech-card-anim" style="padding: 25px; --delay: 0.6s">
                             <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-cube"></i> Impresión 3D</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="tech-tag">PrusaSlicer</span>
-                                <span class="tech-tag">UltiMaker Cura</span>
-                                <span class="tech-tag">ChiTuBox</span>
-                                <span class="tech-tag">Lychee</span>
+                                <span class="tech-tag">PrusaSlicer</span><span class="tech-tag">UltiMaker Cura</span><span class="tech-tag">ChiTuBox</span><span class="tech-tag">Lychee</span>
                             </div>
                         </div>
-                        <div class="value-card" style="padding: 25px;">
+                        <div class="value-card tech-card-anim" style="padding: 25px; --delay: 0.7s">
                             <h3 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-brain"></i> IA & Big Data</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="tech-tag">IA Generativa</span>
-                                <span class="tech-tag">Prompt Engineering</span>
-                                <span class="tech-tag">Big Data</span>
-                                <span class="tech-tag">5G</span>
+                                <span class="tech-tag">IA Generativa</span><span class="tech-tag">Prompt Engineering</span><span class="tech-tag">Big Data</span><span class="tech-tag">5G</span>
                             </div>
                         </div>
                     </div>
@@ -361,8 +360,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item" data-category="fullstack">
+                    <div class="gallery-item gallery-item-featured" data-category="fullstack">
                         <img src="https://res.cloudinary.com/dchedntcz/image/upload/v1776335635/dojoapp_mnx24e.jpg" alt="DojoApp">
+                        <div class="featured-badge"><i class="fas fa-star"></i> Proyecto Destacado</div>
                         <div class="gallery-overlay">
                             <h4>DojoApp</h4>
                             <p>React, Node.js, Cloudinary</p>
@@ -560,7 +560,7 @@
                 
                 console.log('Enviando modal:', templateParams);
                 
-                emailjs.send('service_ke2e3zd', 'template_wyrxbsh', templateParams)
+                emailjs.send('service_uq8y8ta', 'template_wyrxbsh', templateParams)
                     .then(function(response) {
                         console.log('Éxito!', response);
                         alert('¡Mensaje enviado correctamente!');
@@ -615,7 +615,7 @@
     </script>
     <script>
         // ==================== CONFIGURACIÓN BACKEND ====================
-        const API_URL = 'https://portfolioprofesional-backend.onrender.com'; // Cambia por tu URL de Render
+        const API_URL = 'https://portfolioprofesional-backend.onrender.com/api/reviews';
 
         // ==================== STAR RATING ====================
         let selectedRating = 0;
@@ -735,6 +735,19 @@
                 }
             });
         }
+        // ==================== BADGE OPINIONES EN MENÚ ====================
+        async function loadReviewsBadge() {
+            try {
+                const res = await fetch('https://portfolioprofesional-backend.onrender.com/api/reviews');
+                const data = await res.json();
+                if (data.success && data.data.length > 0) {
+                    const badge = document.getElementById('reviews-badge');
+                    badge.textContent = data.data.length;
+                    badge.style.display = 'flex';
+                }
+            } catch (err) {}
+        }
+        loadReviewsBadge();
     </script>
 </body>
 </html>
