@@ -65,6 +65,10 @@
                 <div class="menu-badge">CT</div>
                 <div class="menu-title">Contacto</div>
             </div>
+            <div class="menu-item initial-load" data-section="opiniones">
+                <div class="menu-badge">OP</div>
+                <div class="menu-title">Opiniones</div>
+            </div>
         </div>
 
         <!-- ==================== CONTENEDOR DE SECCIONES ==================== -->
@@ -452,6 +456,61 @@
                 </div>
             </div>
 
+            <!-- ================================================================ -->
+            <!-- SECCIÓN: OPINIONES                                               -->
+            <!-- ================================================================ -->
+            <div class="content-section" id="opiniones">
+                <div class="section-header-small">
+                    <div class="small-logo"><img src="https://res.cloudinary.com/dchedntcz/image/upload/v1773081653/ChatGPT_Image_9_mar_2026_19_40_43_lbwn8a.png" alt="Miguel Angel" class="small-brand-img"></div>
+                    <div class="small-brand"><h3>MAVG</h3><p>Digital Experiences</p></div>
+                </div>
+                <button class="back-btn" onclick="backToMenu()">← Volver al Menú</button>
+
+                <div class="section-header">
+                    <h2 class="section-title">Opiniones</h2>
+                    <p class="section-subtitle">Lo que dicen mis clientes</p>
+                </div>
+
+                <!-- Opiniones publicadas -->
+                <div id="reviews-container" class="testimonials-grid" style="margin-bottom: 60px;">
+                    <div class="testimonial-card" style="grid-column: 1/-1; text-align: center;">
+                        <div class="testimonial-text">Cargando opiniones...</div>
+                    </div>
+                </div>
+
+                <!-- Formulario para dejar opinión -->
+                <div class="value-card" style="max-width: 600px; margin: 0 auto; padding: 40px;">
+                    <h3 style="font-family: 'Syne', sans-serif; color: var(--primary); margin-bottom: 8px; font-size: 22px;">¿Has trabajado conmigo?</h3>
+                    <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 30px; letter-spacing: 1px;">Deja tu opinión — será revisada antes de publicarse</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div class="form-group">
+                            <input type="text" id="review-name" placeholder="Tu nombre y empresa / rol" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="review-role" placeholder="Tu cargo o empresa (opcional)" maxlength="100">
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 4px 0;">
+                            <span style="color: rgba(255,255,255,0.5); font-size: 13px; letter-spacing: 1px;">Valoración:</span>
+                            <div class="star-rating" id="star-rating">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                            <span id="rating-label" style="color: rgba(255,255,255,0.4); font-size: 12px;"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="review-comment" placeholder="Cuéntanos tu experiencia..." maxlength="500" style="min-height: 120px; resize: vertical;"></textarea>
+                            <span id="char-count" style="display: block; text-align: right; font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 4px;">0 / 500</span>
+                        </div>
+                        <button class="submit-btn" id="send-review-btn" style="align-self: center; min-width: 200px;">Enviar Opinión</button>
+                        <div id="review-feedback" style="text-align: center; font-size: 13px; min-height: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+
         </div><!-- /contentArea -->
 
         <!-- ==================== FOOTER ==================== -->
@@ -551,6 +610,129 @@
                         console.error('Error:', error);
                         alert('Error: ' + (error.text || 'Inténtalo de nuevo'));
                     });
+            });
+        }
+    </script>
+    <script>
+        // ==================== CONFIGURACIÓN BACKEND ====================
+        const API_URL = 'https://portfolioprofesional-backend.onrender.com'; // Cambia por tu URL de Render
+
+        // ==================== STAR RATING ====================
+        let selectedRating = 0;
+        const stars = document.querySelectorAll('.star');
+        const ratingLabels = ['', 'Malo', 'Regular', 'Bien', 'Muy bien', 'Excelente'];
+
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                const val = parseInt(star.dataset.value);
+                stars.forEach(s => {
+                    s.classList.toggle('active', parseInt(s.dataset.value) <= val);
+                });
+                document.getElementById('rating-label').textContent = ratingLabels[val];
+            });
+
+            star.addEventListener('mouseout', () => {
+                stars.forEach(s => {
+                    s.classList.toggle('active', parseInt(s.dataset.value) <= selectedRating);
+                });
+                document.getElementById('rating-label').textContent = ratingLabels[selectedRating] || '';
+            });
+
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.value);
+                stars.forEach(s => {
+                    s.classList.toggle('active', parseInt(s.dataset.value) <= selectedRating);
+                });
+                document.getElementById('rating-label').textContent = ratingLabels[selectedRating];
+            });
+        });
+
+        // ==================== CONTADOR DE CARACTERES ====================
+        const reviewComment = document.getElementById('review-comment');
+        const charCount = document.getElementById('char-count');
+        if (reviewComment) {
+            reviewComment.addEventListener('input', () => {
+                charCount.textContent = `${reviewComment.value.length} / 500`;
+            });
+        }
+
+        // ==================== CARGAR OPINIONES ====================
+        async function loadReviews() {
+            const container = document.getElementById('reviews-container');
+            try {
+                const res = await fetch(API_URL);
+                const data = await res.json();
+
+                if (!data.success || data.data.length === 0) {
+                    container.innerHTML = '<div class="no-reviews">Aún no hay opiniones publicadas. ¡Sé el primero!</div>';
+                    return;
+                }
+
+                container.innerHTML = data.data.map(review => `
+                    <div class="review-card">
+                        <div class="review-stars">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+                        <div class="review-comment">${review.comment}</div>
+                        <div class="review-author-name">${review.name}</div>
+                        ${review.role ? `<div class="review-author-role">${review.role}</div>` : ''}
+                        <div class="review-date">${new Date(review.createdAt).toLocaleDateString('es-ES', { year: 'numeric', month: 'long' })}</div>
+                    </div>
+                `).join('');
+            } catch (err) {
+                container.innerHTML = '<div class="no-reviews">No se pudieron cargar las opiniones.</div>';
+            }
+        }
+
+        // Cargar opiniones al entrar a la sección
+        document.querySelector('[data-section="opiniones"]').addEventListener('click', () => {
+            setTimeout(loadReviews, 700);
+        });
+
+        // ==================== ENVIAR OPINIÓN ====================
+        const sendReviewBtn = document.getElementById('send-review-btn');
+        if (sendReviewBtn) {
+            sendReviewBtn.addEventListener('click', async () => {
+                const name = document.getElementById('review-name')?.value.trim() || '';
+                const role = document.getElementById('review-role')?.value.trim() || '';
+                const comment = document.getElementById('review-comment')?.value.trim() || '';
+                const feedback = document.getElementById('review-feedback');
+
+                if (!name || !comment || selectedRating === 0) {
+                    feedback.textContent = 'Por favor completa nombre, valoración y comentario.';
+                    feedback.style.color = '#ff6b6b';
+                    return;
+                }
+
+                sendReviewBtn.textContent = 'Enviando...';
+                sendReviewBtn.disabled = true;
+
+                try {
+                    const res = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, role, rating: selectedRating, comment })
+                    });
+                    const data = await res.json();
+
+                    if (data.success) {
+                        feedback.textContent = '✅ Opinión enviada. Será publicada tras revisión.';
+                        feedback.style.color = 'var(--primary)';
+                        document.getElementById('review-name').value = '';
+                        document.getElementById('review-role').value = '';
+                        document.getElementById('review-comment').value = '';
+                        charCount.textContent = '0 / 500';
+                        selectedRating = 0;
+                        stars.forEach(s => s.classList.remove('active'));
+                        document.getElementById('rating-label').textContent = '';
+                    } else {
+                        throw new Error(data.message);
+                    }
+                } catch (err) {
+                    feedback.textContent = 'Error al enviar. Inténtalo de nuevo.';
+                    feedback.style.color = '#ff6b6b';
+                } finally {
+                    sendReviewBtn.textContent = 'Enviar Opinión';
+                    sendReviewBtn.disabled = false;
+                }
             });
         }
     </script>
